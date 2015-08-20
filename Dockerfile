@@ -8,6 +8,7 @@ RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.
 RUN rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 RUN yum install -y gcc gcc-g++
 RUN yum install -y python-pip git wget
+RUN yum groupinstall -y "Development Tools"
 RUN pip install awscli
 RUN wget --quiet http://nodejs.org/dist/v0.10.33/node-v0.10.33.tar.gz
 RUN tar zxf node-v* && cd node-v* && ./configure && make && make install
