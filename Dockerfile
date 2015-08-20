@@ -9,11 +9,8 @@ RUN rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 RUN yum install -y gcc gcc-g++
 RUN yum install -y python-pip git wget
 RUN pip install awscli
-RUN wget http://nodejs.org/dist/v0.10.33/node-v0.10.33.tar.gz
-RUN tar zxvf node-v* && cd node-v*
-RUN ./configure
-RUN make
-RUN make install
+RUN wget --quiet http://nodejs.org/dist/v0.10.33/node-v0.10.33.tar.gz
+RUN tar zxf node-v* && cd node-v* && ./configure && make && make install
 RUN npm install -g bower
 RUN npm install -g grunt-cli
 
